@@ -1,12 +1,12 @@
-# 🌀 Yamixen Spiritlight V1 – A DIY RGB Wearable Lighting System
+# Yamixen Spiritlight V1 – A DIY RGB Wearable Lighting System
 
-> Made with passion, solder burns, and RGB dreams – by [Tharunkrishna T H](https://www.linkedin.com/in/tharunkrishna/)
+> Made with passion, solder burns, and RGB dreams – by Tharunkrishna T H
 
 **Yamixen Spiritlight V1** is a wearable, Bluetooth-controlled RGB lighting module designed to be mounted on shoes. It features custom LED animations triggered by foot taps or BLE commands, making it ideal for cosplay, performances, or just lighting up your walk – literally.
 
 ---
 
-## 🚀 Features
+## Features
 
 - ⚡ **Bluetooth BLE Control** – Send commands from a custom mobile app
 - 👣 **Tap-to-Trigger Animations** – Tactile button for foot-based activation
@@ -21,7 +21,7 @@
 
 ---
 
-## 🧰 Components Used
+## Components Used
 
 | Component                     | Description                                         |
 |------------------------------|-----------------------------------------------------|
@@ -36,7 +36,7 @@
 
 ---
 
-## 📱 App Control (MIT App Inventor)
+## App Control (MIT App Inventor)
 
 The mobile controller was built using [MIT App Inventor](https://appinventor.mit.edu/).  
 It communicates with the ESP32 via **BLE** and sends simple command strings.
@@ -54,7 +54,7 @@ It communicates with the ESP32 via **BLE** and sends simple command strings.
 
 ---
 
-## 🧠 Arduino Code Overview
+## Arduino Code Overview
 
 - Written in **Arduino IDE**
 - Uses `Adafruit_NeoPixel` for LED control
@@ -64,7 +64,7 @@ It communicates with the ESP32 via **BLE** and sends simple command strings.
 
 ---
 
-## 📂 Repository Contents
+## Repository Contents
 
 Folder Structure:
 - `Yamixen_Spiritlight_V1.ino` – Main Arduino sketch (200 lines!)
@@ -74,7 +74,7 @@ Folder Structure:
 
 ---
 
-## 🧪 How to Use
+## How to Use
 
 1. Clone or download this repo
 2. Upload `Yamixen_Spiritlight_V1.ino` to your **ESP32-C3** using Arduino IDE
@@ -85,7 +85,7 @@ Folder Structure:
 
 ---
 
-## 🛠️ Planned Upgrades
+## Planned Upgrades
 
 The Yamixen Spiritlight project is still evolving. The current version is a working prototype, but several exciting upgrades are already planned to take it to the next level:
 
@@ -98,7 +98,7 @@ The Yamixen Spiritlight project is still evolving. The current version is a work
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Special thanks to:
 - **MIT App Inventor** – for making mobile app development so accessible
@@ -107,20 +107,20 @@ Special thanks to:
 
 ---
 
-## 📸 Preview
+## Preview
 
 *(Insert image/video/gif of the working prototype here)*
 
 ---
 
-## 📢 Feedback & Suggestions
+## Feedback & Suggestions
 
 I'm open to improvements, ideas, or collaboration!  
 📝 [Submit your suggestions here](https://forms.gle/vGdGT9GdUuKqkLbk6)
 
 ---
 
-## 📜 License
+## License
 
 MIT License – free to use, modify, and improve!  
 Please credit this repo if you fork it or build on it.
