@@ -1,25 +1,21 @@
 # Yamixen Spiritlight V1 – A DIY RGB Wearable Lighting System
 
-> Made with passion, solder burns, and RGB dreams – by Tharunkrishna T H
+Made with passion, perseverance, and a love for technology – by Tharunkrishna T H
 
-**Yamixen Spiritlight V1** is a wearable, Bluetooth-controlled RGB lighting module designed to be mounted on shoes. It features custom LED animations triggered by foot taps or BLE commands, making it ideal for cosplay, performances, or just lighting up your walk – literally.
-
----
+**Yamixen Spiritlight V1** is a wearable, Bluetooth-controlled RGB lighting module designed for footwear. It features custom LED animations triggered by foot taps or BLE commands, intended for creative expression in dance, cosplay, or everyday tech flair.
 
 ## Features
 
-- ⚡ **Bluetooth BLE Control** – Send commands from a custom mobile app
-- 👣 **Tap-to-Trigger Animations** – Tactile button for foot-based activation
-- 🎨 **Color Customization** – Change RGB values in real time
-- 💡 **Animations**
-  - `Fade`: Fades the whole strip from the selected color
-  - `Converge`: Colored dots move from both ends and meet in the center
-  - `Rainbow`: Flowing multicolor effect
-  - `Solid Rainbow`: Uniform rainbow cycling across the strip
-- 🔋 Runs on a rechargeable **1000mAh Li-Po battery**
-- 🛠️ Built using **Arduino IDE** and **MIT App Inventor**
-
----
+- Bluetooth BLE control via mobile app
+- Tactile button for real-time animation trigger
+- Adjustable brightness and color using RGB values
+- Multiple animations:
+  - `Fade`: Smoothly fades out from selected color
+  - `Diverge`: Colored dots emerge from the center and move outward
+  - `Rainbow`: Continuous flowing rainbow
+  - `Solid Rainbow`: Uniform rainbow cycling
+- Powered by a 1000mAh rechargeable Li-Po battery
+- Built with Arduino IDE and MIT App Inventor
 
 ## Components Used
 
@@ -27,104 +23,67 @@
 |------------------------------|-----------------------------------------------------|
 | ESP32-C3 Mini Dev Board      | Core MCU with BLE support                          |
 | WS2812B RGB LED Strip (46 LEDs) | Individually addressable LEDs                  |
-| TP4056 USB-C Charging Module | For safe Li-Po battery charging                     |
-| 1000mAh Li-Po Battery        | Power supply                                        |
-| Tactile Button (4-pin)       | For triggering animations via foot tap             |
-| Slide Switch (3-pin)         | On/Off control                                     |
-| Flexible Wires + Jumper Wires| Wiring and connections                             |
-| Normal Soldering Tools       | Solder iron, wire, flux, etc.                      |
+| TP4056 USB-C Charging Module | Safe Li-Po battery charging                         |
+| 1000mAh Li-Po Battery        | Power source                                        |
+| Tactile Button (4-pin)       | For foot-triggered control                         |
+| Slide Switch (3-pin)         | On/Off functionality                                |
+| Flexible Wires + Jumpers     | For connections                                     |
+| Basic Soldering Equipment    | Solder iron, wire, flux, etc.                      |
 
----
+## App Control
 
-## App Control (MIT App Inventor)
+Developed using MIT App Inventor, the app allows wireless control through BLE.
 
-The mobile controller was built using [MIT App Inventor](https://appinventor.mit.edu/).  
-It communicates with the ESP32 via **BLE** and sends simple command strings.
+### BLE Command Reference
 
-### BLE Command Reference:
-
-| Command       | Function                              |
-|---------------|---------------------------------------|
-| `1`           | Trigger `fade()` animation            |
-| `2:<0–100>`   | Set brightness (0–100%)               |
-| `3:(R,G,B)`   | Set RGB color (e.g. `3:(255,0,255)`)  |
-| `4`           | Enable flowing rainbow mode           |
-| `5`           | Enable solid rainbow mode             |
-| `6`           | Trigger `converge()` animation        |
-
----
+| Command     | Function                                |
+|-------------|-----------------------------------------|
+| `1`         | Trigger `fade()` animation              |
+| `2:<0–100>` | Set brightness (percentage)             |
+| `3:(R,G,B)` | Set RGB color values                    |
+| `4`         | Enable flowing rainbow mode             |
+| `5`         | Enable solid rainbow mode               |
+| `6`         | Trigger `diverge()` animation           |
 
 ## Arduino Code Overview
 
-- Written in **Arduino IDE**
 - Uses `Adafruit_NeoPixel` for LED control
-- Uses `BLEDevice`, `BLEUtils`, `BLEServer` for Bluetooth communication
-- Maintains a current mode state and RGB color variables
-- Supports both BLE input and tactile button control
-
----
+- BLE libraries from `BLEDevice`, `BLEUtils`, and `BLEServer`
+- Central color state and animation mode control
+- Modular structure for future upgrades
 
 ## Repository Contents
 
-Folder Structure:
-- `Yamixen_Spiritlight_V1.ino` – Main Arduino sketch (200 lines!)
-- `App/SpiritlightApp.aia` – MIT App Inventor project file
-- `Docs/WiringDiagram.png` – Wiring layout (coming soon)
-- `README.md` – This file
-
----
+- `Yamixen_Spiritlight_V1.ino` – Arduino code
+- `App/SpiritlightApp.aia` – App Inventor source
+- `README.md` – Project documentation
 
 ## How to Use
 
-1. Clone or download this repo
-2. Upload `Yamixen_Spiritlight_V1.ino` to your **ESP32-C3** using Arduino IDE
-3. Install the app on your phone using MIT App Companion or compile from `.aia`
-4. Power on the module (via Li-Po and switch)
-5. Connect via BLE and send commands
-6. Enjoy stepping into a world of color!
-
----
+1. Flash the Arduino code to the ESP32-C3 Mini board
+2. Power with Li-Po battery through TP4056 module
+3. Install and run the MIT App Inventor app
+4. Connect via BLE and use the app to control lights
+5. Use foot tap (tactile button) to trigger effects
 
 ## Planned Upgrades
 
-The Yamixen Spiritlight project is still evolving. The current version is a working prototype, but several exciting upgrades are already planned to take it to the next level:
+The Spiritlight project is still in active development. Upcoming improvements include:
 
-- **Pressure-Based Activation**: Replace the tactile switch with a **piezo sensor** or **force-sensitive resistor**
-- **Battery Level Monitoring**: Display battery percentage via BLE
-- **Advanced Animation Patterns**: More visual effects and programmable modes
-- **Improved App Interface**: Smoother UI with real-time color previews
-- **3D-Printed Integration**: Modular design with **3D-printed sole/housing**
-- **Refined Wiring & Mounting**: Better internal layout using flexible wires
+- Replacement of tactile button with piezo or force-sensitive resistor for better comfort
+- Battery level indicator with BLE updates
+- Additional animation effects and smoother transitions
+- Enhanced mobile UI with better user experience
+- 3D-printed sole or housing for compact integration
+- Modular plug-and-play architecture
 
----
+## Feedback
 
-## Acknowledgments
-
-Special thanks to:
-- **MIT App Inventor** – for making mobile app development so accessible
-- **Adafruit** – for the amazing NeoPixel library
-- Every failed wiring attempt that led to a better design
-
----
-
-## Preview
-
-*(Insert image/video/gif of the working prototype here)*
-
----
-
-## Feedback & Suggestions
-
-I'm open to improvements, ideas, or collaboration!  
-📝 [Submit your suggestions here](https://forms.gle/vGdGT9GdUuKqkLbk6)
-
----
+If you’d like to contribute suggestions or improvements, please use this form:  
+[Feedback Form](https://forms.gle/vGdGT9GdUuKqkLbk6)
 
 ## License
 
-MIT License – free to use, modify, and improve!  
-Please credit this repo if you fork it or build on it.
+MIT License. Feel free to fork and modify with attribution.
 
----
-
-Built with 💡, 🔥, and RGB by **Tharunkrishna T H**
+Built with curiosity and creativity by Tharunkrishna T H
