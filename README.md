@@ -11,7 +11,7 @@ Made with passion, perseverance, and a love for technology – by Tharunkrishna 
 - Adjustable brightness and color using RGB values
 - Multiple animations:
   - `Fade`: Smoothly fades out from selected color
-  - `Converge`: Colored dots emerge from heel and move forward towards the toes
+  - `Converge`: Colored dots emerge from heel and converges towards the toes
   - `Rainbow`: Continuous flowing rainbow
   - `Solid Rainbow`: Uniform rainbow cycling
 - Powered by a 1000mAh rechargeable Li-Po battery
