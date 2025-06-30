@@ -39,20 +39,22 @@ void converge() {
   strip.clear();
   strip.show();
   int delayTime = 10;
-  for (int i = 0;i <= 22;i++) {
+  for (int i = 0; i <= 22; i++) {
     strip.clear();
     if (i < 3) {
       for (int j = 0; j <= i; j++) {
-        strip.setPixelColor(j,strip.Color(lastR,lastG,lastB));
-        strip.setPixelColor(NUMPIXELS-1-j,strip.Color(lastR,lastG,lastB));
+        int left = 23 - j;
+        int right = 22 + j;
+        strip.setPixelColor(left, strip.Color(lastR, lastG, lastB));
+        strip.setPixelColor(right, strip.Color(lastR, lastG, lastB));
       }
     } else {
-      for (int j = 0;j < 3;j++) {
-        int leftPos = i-j;
-        int rightPos = NUMPIXELS-1-(i-j);
-        if (leftPos < rightPos) {
-          strip.setPixelColor(leftPos,strip.Color(lastR,lastG,lastB));
-          strip.setPixelColor(rightPos,strip.Color(lastR,lastG,lastB));
+      for (int j = 0; j < 3; j++) {
+        int left = 23 - (i - j);
+        int right = 22 + (i - j);
+        if (left >= 0 && right < NUMPIXELS) {
+          strip.setPixelColor(left, strip.Color(lastR, lastG, lastB));
+          strip.setPixelColor(right, strip.Color(lastR, lastG, lastB));
         }
       }
     }
@@ -60,15 +62,13 @@ void converge() {
     strip.show();
     delay(delayTime);
   }
-  strip.clear();
-  strip.setPixelColor(22, strip.Color(lastR,lastG,lastB));
-  strip.setPixelColor(23, strip.Color(lastR,lastG,lastB));
-  strip.setBrightness(brightness);
-  strip.show();
-  delay(50);
   for (int b = 255; b >= 0; b -= 15) {
-    strip.setPixelColor(22, strip.Color((lastR*b)/255, (lastG*b)/255, (lastB*b)/255));
-    strip.setPixelColor(23, strip.Color((lastR*b)/255, (lastG*b)/255, (lastB*b)/255));
+    for (int i = 0; i < 3; i++) {
+      int left = 0 + i;
+      int right = NUMPIXELS - 1 - i;
+      strip.setPixelColor(left, strip.Color((lastR * b) / 255, (lastG * b) / 255, (lastB * b) / 255));
+      strip.setPixelColor(right, strip.Color((lastR * b) / 255, (lastG * b) / 255, (lastB * b) / 255));
+    }
     strip.show();
     delay(10);
   }
