@@ -43,7 +43,7 @@ Developed using MIT App Inventor, the app allows wireless control through BLE.
 | `3:(R,G,B)` | Set RGB color values                    |
 | `4`         | Enable flowing rainbow mode             |
 | `5`         | Enable solid rainbow mode               |
-| `6`         | Trigger `diverge()` animation           |
+| `6`         | Trigger `converge()` animation           |
 
 ## Arduino Code Overview
 
